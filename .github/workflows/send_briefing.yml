@@ -1,0 +1,27 @@
+name: Cybersecurity Briefing – Invio settimanale
+
+on:
+  schedule:
+    # Ogni giovedì alle 06:00 UTC = 08:00 ora italiana (CEST)
+    - cron: '0 6 * * 4'
+  workflow_dispatch: # permette avvio manuale dal sito GitHub
+
+jobs:
+  send-briefing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Invia briefing via email
+        env:
+          GMAIL_USER:     ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASS: ${{ secrets.GMAIL_APP_PASS }}
+          EMAIL_TO:       ${{ secrets.EMAIL_TO }}
+        run: python send_briefing.py
