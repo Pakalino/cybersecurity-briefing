@@ -1,6 +1,9 @@
 name: Cybersecurity Briefing – Invio settimanale
 
 on:
+  push:
+    paths:
+      - 'diario-cybersecurity-2026.docx'
   schedule:
     # Ogni giovedì alle 06:00 UTC = 08:00 ora italiana (CEST)
     - cron: '0 6 * * 4'
