@@ -2,12 +2,12 @@ name: Cybersecurity Briefing – Invio settimanale
 
 on:
   push:
-    paths:
-      - 'diario-cybersecurity-2026.docx'
+    branches:
+      - main
   schedule:
     # Ogni giovedì alle 06:00 UTC = 08:00 ora italiana (CEST)
     - cron: '0 6 * * 4'
-  workflow_dispatch: # permette avvio manuale dal sito GitHub
+  workflow_dispatch:
 
 jobs:
   send-briefing:
