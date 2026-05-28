@@ -1,4 +1,4 @@
-name: TIM Briefing – Invio settimanale
+name: TIM Briefing - Invio settimanale
 
 on:
   workflow_dispatch:
