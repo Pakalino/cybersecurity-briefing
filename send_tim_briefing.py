@@ -5,7 +5,7 @@ from datetime import date
 
 GMAIL_USER = os.environ["GMAIL_USER"]
 GMAIL_PASS = os.environ["GMAIL_APP_PASS"]
-EMAIL_TO = "taglientim@yahoo.it"
+EMAIL_TO = "marco.taglienti@telecomitalia.it"
 today = date.today().strftime("%d %B %Y")
 SUBJECT = f"Briefing settimanale TIM S.p.A. - {today}"
 
